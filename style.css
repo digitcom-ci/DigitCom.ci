@@ -25,6 +25,7 @@ h1{
   width:300px;
   height:180px;
   margin:0 auto 20px;
+  perspective: 1000px; /* nécessaire pour l’effet 3D */
 }
 
 .card-wrapper img{
@@ -36,21 +37,25 @@ h1{
   display:block;
   cursor:pointer;
   transition: transform 0.6s;
-}
-
-#card-back{
+  backface-visibility: hidden;
   position:absolute;
   top:0;
   left:0;
-  transform: rotateY(180deg);
-  backface-visibility:hidden;
 }
 
-.card-wrapper:hover #card-front{
+#card-front{
+  transform: rotateY(0deg);
+}
+
+#card-back{
   transform: rotateY(180deg);
 }
 
-.card-wrapper:hover #card-back{
+.card-wrapper.flipped #card-front{
+  transform: rotateY(180deg);
+}
+
+.card-wrapper.flipped #card-back{
   transform: rotateY(0deg);
 }
 
