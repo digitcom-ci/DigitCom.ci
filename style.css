@@ -20,13 +20,15 @@ h1{
   margin-bottom:20px;
 }
 
+/* Carte 3D cliquable */
 .card-wrapper{
   position: relative;
   width:300px;
   height:180px;
   margin:0 auto 20px;
-  perspective: 1000px; /* nécessaire pour l’effet 3D */
+  perspective: 1000px; /* effet 3D */
   cursor: pointer;
+  touch-action: manipulation; /* pour mobile */
 }
 
 .card-wrapper img{
@@ -58,6 +60,7 @@ h1{
   transform: rotateY(0deg);
 }
 
+/* Bouton télécharger */
 .btn{
   background:#000;
   color:#fff;
@@ -72,4 +75,14 @@ h1{
   background:#333;
 }
 
-
+/* Responsive */
+@media (max-width: 500px){
+  .card-wrapper{
+    width:250px;
+    height:150px;
+  }
+  .btn{
+    padding:10px 18px;
+    font-size:0.9rem;
+  }
+}
