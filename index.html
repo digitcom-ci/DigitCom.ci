@@ -18,6 +18,11 @@
 </div>
 
 <script>
+const cardWrapper = document.querySelector('.card-wrapper');
+cardWrapper.addEventListener('click', () => {
+  cardWrapper.classList.toggle('flipped');
+});
+
 const downloadBtn = document.getElementById('downloadBtn');
 const frontImg = document.getElementById('card-front');
 const backImg = document.getElementById('card-back');
@@ -52,6 +57,7 @@ downloadBtn.addEventListener('click', () => {
   link.click();
 });
 </script>
+
 
 </body>
 </html>
